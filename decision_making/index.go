@@ -1,8 +1,8 @@
-package main
+package decisionmaking
 
 import "fmt"
 
-func main() {
+func condition() {
 	// get inputs from user
 	fmt.Println("Enter Your Name: ")
 	var myName string
