@@ -1,4 +1,4 @@
-package main
+package functions
 
 import "fmt"
 
@@ -33,7 +33,7 @@ func addAll(args ...int) (int, int) {
 	return finalAddValue, finalSubValue
 }
 
-func main() {
+func printStruct() {
 	employee1 := Employee{"Yonas", "Alem"}
 
 	numbers := Numbers{34, 67}
