@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	p := s.Person{"satori", 16, "F", "Oriental spirit hall", false}
+	p := s.Person{Name: "Yonas Alem", Age: 25, Gender: "Male", Where: "Addis Ababa", Is_married: false}
 
 	encoded, err := s.MarshalData(p)
 
