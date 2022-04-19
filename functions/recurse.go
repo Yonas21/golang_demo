@@ -1,8 +1,8 @@
-package main
+package functions
 
 import "fmt"
 
-func main() {
+func printFactorial() {
 	var input_num int
 	fmt.Println("Enter the Number:")
 	fmt.Scanln(&input_num)
