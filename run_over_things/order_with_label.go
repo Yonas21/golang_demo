@@ -1,8 +1,8 @@
-package main
+package runoverthings
 
 import "fmt"
 
-func main() {
+func getGo() {
 
 	// define local variable
 	var a int = 10

@@ -1,8 +1,8 @@
-package main
+package runoverthings
 
 import "fmt"
 
-func main() {
+func getRange() {
 
 	b := 15
 	var a int

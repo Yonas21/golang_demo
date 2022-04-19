@@ -1,8 +1,8 @@
-package main
+package runoverthings
 
 import "fmt"
 
-func main() {
+func demoBreak() {
 	var i, j int
 
 	for i = 2; i < 100; i++ {
