@@ -1,10 +1,10 @@
-package main
+package decisionmaking
 
 import (
 	"fmt"
 )
 
-func main() {
+func getScoreline() {
 	/*local variable definition*/
 	var grade string
 	var marks int
