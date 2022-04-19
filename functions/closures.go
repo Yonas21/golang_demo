@@ -1,13 +1,13 @@
 /*
 * This example demonstrate closure
  */
-package main
+package functions
 
 import (
 	"fmt"
 )
 
-func main() {
+func getAnonymous() {
 	input_NUM := 10
 	squareNumber := func() int {
 		input_NUM *= input_NUM
