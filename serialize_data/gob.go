@@ -9,8 +9,9 @@ type Person struct {
 	Name       string
 	Age        int    `json:"age"`
 	Gender     string `json:"gender"`
-	Where      string `json:"where"`
+	Place      string `json:"place"`
 	Is_married bool   `json:"is_married"`
+	Id         int    `json:"id"`
 }
 
 func EncodeData(data Person) (*bytes.Buffer, error) {
