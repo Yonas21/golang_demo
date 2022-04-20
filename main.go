@@ -1,35 +1,26 @@
 package main
 
 import (
-	models "example/hello/models"
-	s "example/hello/serialize_data"
+	"example/hello/models"
 	"fmt"
 	"log"
 )
 
 func main() {
 
-	p := s.Person{Name: "Yonas Alem", Age: 25, Gender: "Male", Where: "Addis Ababa", Is_married: false}
+	// p := s.Person{Name: "Feven Fissiha", Age: 21, Gender: "Female", Place: "Addis Ababa", Is_married: true}
 
-	encoded, err := s.MarshalData(p)
+	// models.CreateUser(&p)
 
-	if err != nil {
-		log.Fatalf("%v", err)
-	}
-
-	decoded, err := s.UnMarshalData(encoded)
+	users, err := models.GetAllUsers()
 
 	if err != nil {
-		fmt.Println("err", err)
-	}
-	fmt.Println(decoded)
-
-	connection, err := models.Connect()
-
-	if err != nil {
-		log.Fatalf("error with connection: %v", err)
+		log.Fatalf("unable to get any user: %v", err)
 	}
 
-	fmt.Printf("Connected Successfully: %v", *connection)
+	for _, v := range users {
+		fmt.Printf("%+v\n", v)
+
+	}
 
 }
