@@ -1,6 +1,7 @@
 package main
 
 import (
+	models "example/hello/models"
 	s "example/hello/serialize_data"
 	"fmt"
 	"log"
@@ -22,5 +23,13 @@ func main() {
 		fmt.Println("err", err)
 	}
 	fmt.Println(decoded)
+
+	connection, err := models.Connect()
+
+	if err != nil {
+		log.Fatalf("error with connection: %v", err)
+	}
+
+	fmt.Printf("Connected Successfully: %v", *connection)
 
 }
