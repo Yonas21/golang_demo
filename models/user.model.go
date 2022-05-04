@@ -14,6 +14,11 @@ type Product struct {
 	OrderedBy string `json:"ordered_by"`
 }
 
+type ShowPerson struct {
+	Name string
+	Age  int `json:"age"`
+}
+
 func CreateUser(person *s.Person) (string, error) {
 
 	database, err := db.Connect()
@@ -38,7 +43,7 @@ func GetAllUsers() ([]s.Person, error) {
 	}
 
 	// get all data
-	database.Order("age").Find(&users)
+	database.Limit(3).Order("age").Find(&users)
 	return users, nil
 }
 

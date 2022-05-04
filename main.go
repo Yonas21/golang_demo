@@ -1,9 +1,9 @@
 package main
 
 import (
-	"example/hello/models"
+	"example/hello/singleton"
 	"fmt"
-	"log"
+	"time"
 )
 
 func main() {
@@ -11,16 +11,19 @@ func main() {
 	// p := s.Person{Name: "Feven Fissiha", Age: 21, Gender: "Female", Place: "Addis Ababa", Is_married: true}
 
 	// models.CreateUser(&p)
+	func() {
+		time.Sleep(time.Millisecond * 600)
+		fmt.Println(*singleton.GetInstance())
+	}()
 
-	users, err := models.GetAllUsers()
+	fmt.Println("welcome")
 
-	if err != nil {
-		log.Fatalf("unable to get any user: %v", err)
-	}
+	for i := 0; i < 100; i++ {
 
-	for _, v := range users {
-		fmt.Printf("%+v\n", v)
-
+		func(ix int) {
+			time.Sleep(time.Millisecond * 60)
+			fmt.Println(ix, " = ", singleton.GetInstance().Conn)
+		}(i)
 	}
 
 }
