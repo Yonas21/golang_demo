@@ -1,29 +1,19 @@
 package main
 
 import (
-	"example/hello/singleton"
-	"fmt"
-	"time"
+	observer "example/hello/observer_pattern"
 )
 
 func main() {
 
-	// p := s.Person{Name: "Feven Fissiha", Age: 21, Gender: "Female", Place: "Addis Ababa", Is_married: true}
+	shirtItem := observer.NewItem("Jordan Air Shoes")
 
-	// models.CreateUser(&p)
-	func() {
-		time.Sleep(time.Millisecond * 600)
-		fmt.Println(*singleton.GetInstance())
-	}()
+	observerOne := &observer.Customer{Id: "yonasalem056@gmail.com"}
+	observerTwo := &observer.Customer{Id: "yonalem21@gmail.com"}
 
-	fmt.Println("welcome")
+	shirtItem.Register(observerOne)
+	shirtItem.Register(observerTwo)
 
-	for i := 0; i < 100; i++ {
-
-		func(ix int) {
-			time.Sleep(time.Millisecond * 60)
-			fmt.Println(ix, " = ", singleton.GetInstance().Conn)
-		}(i)
-	}
+	shirtItem.UpdateAvalability()
 
 }
